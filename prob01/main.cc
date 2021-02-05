@@ -17,11 +17,12 @@ int main() {
     char jalapeno;
     char onion;
 
-    Image my_image(500, 500);
+
 
     std::cout << "Welcome to PizzaMaker 2.0!\nWould you like a pizza?\n(y/n): ";
     std::cin >> want_pizza;
     if (want_pizza == 'y'){
+        Image my_image(500, 500);
         AddCrust(my_image);
         std::cout << "Would you like tomato sauce?\n(y/n): " ;
         std::cin >> tomato_sauce;
@@ -48,15 +49,12 @@ int main() {
         if (onion == 'y') {
             AddOnion(my_image);
         }
+        my_image.SaveImageBmp("pizza.bmp");
         std::cout << "Great! Your pizza is at pizza.bmp. Enjoy!\n";
     }
-    else{
 
 
-    }
 
-
-    my_image.SaveImageBmp("pizza.bmp");
 
     return 0;
 }
